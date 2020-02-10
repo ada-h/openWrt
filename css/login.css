@@ -1,0 +1,23 @@
+
+
+.cardHeading{
+    font-size: 35px;
+    font-weight: bold;
+}
+.wicryptmsg{
+    color: #2E2E2E;
+    margin-bottom: 5rem;
+}
+.clickLogin{
+    font-size: 20px !important;
+    width: 50% !important;
+    border-radius: 50px !important;
+  }
+  .wicryptColor{
+    background-color: #2D4773 !important;
+    color: white  !important
+}
+.loginBtn{
+    display: flex;
+    justify-content: center;
+  }
