@@ -1,26 +1,39 @@
 
+@font-face {
+  font-family: 'Poppins Semibold';
+  src: url('/Poppins-SemiBold.ttf'); /* IE9 Compat Modes */
+  
+}
+@font-face {
+  font-family: 'Poppins Medium';
+  src: url('/Poppins-Medium.ttf'); /* IE9 Compat Modes */
+  
+}
 
 
 body{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins Semibold', sans-serif;
 }
 
 .cardHeading{
     font-size: 35px;
     font-weight: bold;
     color: #2D4773;
+    opacity: .9
 }
 .wicryptmsg{
-  color: #6E6E6E;
+  color: #3D3D3D;
   margin-bottom: 3rem;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
+  font-family: 'Poppins Medium', sans-serif;
 }
 .clickLogin{
     font-size: 20px !important;
     width: 50% !important;
     border-radius: 50px !important;
     cursor: pointer;
+    font-family: 'Poppins Medium', sans-serif;
   }
   .disabled{
     opacity: .5
@@ -52,9 +65,12 @@ body{
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1.25rem;
-    box-shadow: 0px 13px 8px #DCDCDC;
+    box-shadow: 0px 1px 8px #DCDCDC;
     border-radius: 10px;
     opacity: 1;
+  }
+  .megaByte{
+    font-size: 15px;
   }
 
   .bkgImg{
@@ -80,11 +96,10 @@ body{
 
     .welcome{
       color: #3D3D3D;
-      font-size: 23px;
+      font-size: 30px;
       font-weight: bold;
-      padding: 40px;
+      padding: 0px 50px 30px 50px;
       text-align: center;
-      /* padding-right: 100px; */
      
     }
     @media (min-width: 576px) {
@@ -255,7 +270,8 @@ body{
     label{
       margin-bottom: 0px !important;
       font-weight: bold !important;
-      color: #3D3D3D
+      color: #3D3D3D;
+      font-family: 'Poppins Medium', sans-serif;
   }
 
   .loginCred{
@@ -267,22 +283,28 @@ body{
   }
 
 
+.prefooter{
+  background-color: #F8F8F8;
+  height: 30px;
+  clip-path: ellipse(51% 17% at 50% 100%);
+}
 .footer{
   background-color: #F8F8F8;
   padding: 20px;
-  border-radius: 20px 20px 0px 0px;
 }
 .download{
   color: #6E6E6E;
-  font-size: 18px;
+  font-size: 15px;
   text-align: center;
+  font-family: 'Poppins Medium', sans-serif;
   font-weight: bold;
 }
 .poweredBy{
   color: #6E6E6E;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
+  font-family: 'Poppins Medium', sans-serif;
   
 }
 .slider {
@@ -326,16 +348,17 @@ body{
   background-color: #FEEEEE;
   padding: 5px;
 }
+input:focus {
+  border: 0px !important
+}
+input:active{
+  border: 0px !important
+}
 .appDownloads{
   display: flex;
   justify-content: space-evenly;
 }
-.labelSub{
-  margin-bottom: 0px;
-  color: #BCBCBC;
-  font-size: 14px;
-  margin-top: 2px;
-}
+
 .mobileDiv{
   text-align: center;
 }
@@ -355,31 +378,39 @@ body{
   color: #344684;
   font-weight: bold;
   font-size: 20px;
-  opacity: .8;
+  opacity: .9;
 }
 .billingText{
   color: #848484;
   font-size: 18px;
+  font-family: 'Poppins Medium', sans-serif;
 }
 .rate{
   color: #000000;
+  margin-bottom: 0px;
+  margin-top: 0px;
   font-size: 25px;
   font-weight: bold;
+  font-family: 'Poppins Medium', sans-serif;
 }
 .perGb{
   font-size: 18px;
 }
 .billdescr{
   color: #6E6E6E;
+  font-size: 14px;
+  font-family: 'Poppins Medium', sans-serif;
+  
 }
 .updownloads{
-  border-top: 1px solid #6E6E6E;
+  border-top: 1px solid #DCDCDC;
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
 }
 .uploadTitle{
-  color:#848484
+  color:#848484;
+  font-family: 'Poppins Medium', sans-serif;
 }
 .dataValue{
   font-size: 20px;
