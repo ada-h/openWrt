@@ -7,55 +7,75 @@
     <meta http-equiv="Expires" content="0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" type="text/css" href="/login.css"> -->
 
-    <title>$gatewayname Captive Portal.</title>
+    <title>$gatewayname</title>
     <style>
-                
         @font-face {
-        font-family: 'Poppins Semibold';
-        src: url('/Poppins-SemiBold.ttf'); /* IE9 Compat Modes */
-        
+            font-family: 'Poppins Semibold';
+            src: url('/Poppins-SemiBold.ttf');
+
         }
+
         @font-face {
-        font-family: 'Poppins Medium';
-        src: url('/Poppins-Medium.ttf'); /* IE9 Compat Modes */
-        
+            font-family: 'Poppins Medium';
+            src: url('/Poppins-Medium.ttf');
+
         }
 
 
-        body{
-        font-family: 'Poppins Semibold', sans-serif;
+        body {
+            font-family: 'Poppins Semibold', sans-serif;
         }
 
-        .cardHeading{
+        .cardHeading {
             font-size: 35px;
             font-weight: bold;
             color: #2D4773;
             opacity: .9
         }
-        .wicryptmsg{
-        color: #3D3D3D;
-        margin-bottom: 3rem;
-        font-size: 15px;
-        font-weight: bold;
-        font-family: 'Poppins Medium', sans-serif;
+
+        .container-fluid {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
         }
-        .clickLogin{
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+        }
+
+        .wicryptmsg {
+            color: #3D3D3D;
+            margin-bottom: 3rem;
+            font-size: 15px;
+            font-weight: bold;
+            font-family: 'Poppins Medium', sans-serif;
+        }
+
+        .clickLogin {
             font-size: 20px !important;
             width: 50% !important;
             border-radius: 50px !important;
             cursor: pointer;
             font-family: 'Poppins Medium', sans-serif;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
-        .disabled{
+
+        .disabled {
             opacity: .5
         }
-        .wicryptColor{
+
+        .wicryptColor {
             background-color: #344684 !important;
-            color: #FFFFFF  !important
+            color: #FFFFFF !important
         }
-        .loginBtn{
+
+        .loginBtn {
             display: flex;
             justify-content: center;
         }
@@ -73,7 +93,7 @@
             border: 1px solid rgba(0, 0, 0, 0.125);
             border-radius: 0.25rem;
         }
-        
+
         .card-body {
             -ms-flex: 1 1 auto;
             flex: 1 1 auto;
@@ -82,18 +102,17 @@
             border-radius: 10px;
             opacity: 1;
         }
-        .megaByte{
+
+        .megaByte {
             font-size: 15px;
         }
 
-        .bkgImg{
+        .bkgImg {
             position: fixed;
-            left:60%;
+            left: 60%;
             z-index: -1;
 
         }
-        
-
 
         .container {
             width: 100%;
@@ -101,512 +120,697 @@
             padding-left: 15px;
             margin-right: auto;
             margin-left: auto;
-            }
-            .logo{
+        }
+
+        .logo {
             text-align: center;
             height: 100px;
-            }
+        }
 
-            .welcome{
+        .welcome {
             color: #3D3D3D;
             font-size: 30px;
             font-weight: bold;
             padding: 0px 50px 30px 50px;
             text-align: center;
-            
-            }
-            @media (min-width: 576px) {
+            line-height: 1.2;
+
+        }
+
+        @media (min-width: 576px) {
             .container {
                 max-width: 540px;
             }
+
             .col-sm-12 {
                 -ms-flex: 0 0 100%;
                 flex: 0 0 100%;
                 max-width: 100%;
             }
-            }
-            
-            @media (min-width: 768px) {
+        }
+
+        @media (min-width: 768px) {
             .container {
                 max-width: 720px;
             }
-            
-            
-            }
-            .slideDesk{
+
+
+        }
+
+        .slideDesk {
             display: none
-            }
-            .slideMobile{
+        }
+
+        .slideMobile {
             display: block;
-            }
-            @media (min-width: 992px) {
-            .slideMobile{
+        }
+
+        @media (min-width: 992px) {
+
+            .slideMobile {
                 display: none;
             }
-            .slideDesk{
+
+            .slideDesk {
                 display: block
             }
+
             .container {
                 max-width: 960px;
             }
-            .welcome{
-                font-size: 50px;
+
+            .welcome {
+                font-size: 45px;
                 padding: 100px;
-                margin-left: 70px;
                 text-align: left;
+                margin-left: 0px;
+                margin-right: 135px;
             }
+
+            .gateway {
+                margin-top: -80px;
+                margin-bottom: 150px;
             }
-            
-            @media (min-width: 1200px) {
+
+            .download {
+                text-align: left !important;
+                margin-left: 120px !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
             .container {
                 max-width: 1140px;
             }
-            }
+        }
 
-            .row {
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-                margin-right: -15px;
-                margin-left: -15px;
-            }
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
 
-            .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
-            .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
-            .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
-            .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
-            .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
-            .col-xl-auto {
+        .col-1,
+        .col-2,
+        .col-3,
+        .col-4,
+        .col-5,
+        .col-6,
+        .col-7,
+        .col-8,
+        .col-9,
+        .col-10,
+        .col-11,
+        .col-12,
+        .col,
+        .col-auto,
+        .col-sm-1,
+        .col-sm-2,
+        .col-sm-3,
+        .col-sm-4,
+        .col-sm-5,
+        .col-sm-6,
+        .col-sm-7,
+        .col-sm-8,
+        .col-sm-9,
+        .col-sm-10,
+        .col-sm-11,
+        .col-sm-12,
+        .col-sm,
+        .col-sm-auto,
+        .col-md-1,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md,
+        .col-md-auto,
+        .col-lg-1,
+        .col-lg-2,
+        .col-lg-3,
+        .col-lg-4,
+        .col-lg-5,
+        .col-lg-6,
+        .col-lg-7,
+        .col-lg-8,
+        .col-lg-9,
+        .col-lg-10,
+        .col-lg-11,
+        .col-lg-12,
+        .col-lg,
+        .col-lg-auto,
+        .col-xl-1,
+        .col-xl-2,
+        .col-xl-3,
+        .col-xl-4,
+        .col-xl-5,
+        .col-xl-6,
+        .col-xl-7,
+        .col-xl-8,
+        .col-xl-9,
+        .col-xl-10,
+        .col-xl-11,
+        .col-xl-12,
+        .col-xl,
+        .col-xl-auto {
             position: relative;
             width: 100%;
             min-height: 1px;
             padding-right: 15px;
             padding-left: 15px;
-            }
-            
+        }
 
-            @media (min-width: 992px) {
+
+        @media (min-width: 992px) {
             .col-lg-4 {
                 -ms-flex: 0 0 33.333333%;
                 flex: 0 0 33.333333%;
                 max-width: 33.333333%;
             }
-            
-            .col-lg-5 {
-            -ms-flex: 0 0 41.666667%;
-            flex: 0 0 41.666667%;
-            max-width: 41.666667%;
+
+            .col-lg-1 {
+                -ms-flex: 0 0 8.333333%;
+                flex: 0 0 8.333333%;
+                max-width: 8.333333%;
             }
+
+            .col-lg-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+
             .col-lg-6 {
                 -ms-flex: 0 0 50%;
                 flex: 0 0 50%;
                 max-width: 50%;
             }
+
             .col-lg-8 {
                 -ms-flex: 0 0 66.666667%;
                 flex: 0 0 66.666667%;
                 max-width: 66.666667%;
             }
+
             .col-lg-12 {
                 -ms-flex: 0 0 100%;
                 flex: 0 0 100%;
                 max-width: 100%;
             }
-            .logo{
+
+            .logo {
                 text-align: justify;
-                margin-left: 4rem;
                 height: 100px;
             }
-            .footer{
+
+            .footer {
                 display: flex;
             }
-            .bkgImg{
-            display: none
-            
-            }
-            
+
+            .bkgImg {
+                display: none
             }
 
-            .btn {
-                display: inline-block;
-                font-weight: 400;
-                text-align: center;
-                white-space: nowrap;
-                vertical-align: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                border: 1px solid transparent;
-                padding: 0.375rem 0.75rem;
-                font-size: 1rem;
-                line-height: 1.5;
-                border-radius: 0.25rem;
-                transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-            }
+        }
 
-            .input-group {
-                position: relative;
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-                -ms-flex-align: stretch;
-                align-items: stretch;
-                width: 100%;
-            }
-            
-            .form-control {
-                display: block;
-                width: 100%;
-                /* height: calc(2.25rem + 2px); */
-                padding: 0.375rem 0.75rem;
-                font-size: 1rem;
-                line-height: 1.5;
-                color: #495057;
-                background-color: #fff;
-                background-clip: padding-box;
-                border: 1px solid #ced4da;
-                border-radius: 0.25rem;
-                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-            }
-            
-            
-            .mt-5{
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .input-group {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+
+        .mt-5 {
             margin-top: 3rem !important;
-            }
+        }
 
-            .mb-3{
+        .mb-3 {
             margin-bottom: 1rem !important;
-            }
-            label{
+        }
+
+        label {
+            font-size: 12px;
             margin-bottom: 0px !important;
             font-weight: bold !important;
-            color: #3D3D3D;
+            color: #495057;
             font-family: 'Poppins Medium', sans-serif;
         }
 
-        .loginCred{
+        .loginCred {
             border-top: 0px !important;
-            border-left: 0px  !important;
+            border-left: 0px !important;
             border-right: 0px !important;
-            border-bottom: 2px solid #0000001A  !important;
-            border-radius: 0%  !important;
+            border-bottom: 2px solid #0000001A !important;
+            border-radius: 0% !important;
+        }
+
+        .loginCred:focus {
+            border-bottom: 2px solid #0000001A !important;
         }
 
 
-        .prefooter{
-        background-color: #F8F8F8;
-        height: 30px;
-        clip-path: ellipse(51% 17% at 50% 100%);
+        .footer {
+
+            padding: 20px;
         }
-        .footer{
-        background-color: #F8F8F8;
-        padding: 20px;
+
+        .download {
+            color: #6E6E6E;
+            font-size: 15px;
+            text-align: center;
+            font-family: 'Poppins Medium', sans-serif;
+            font-weight: bold;
         }
-        .download{
-        color: #6E6E6E;
-        font-size: 15px;
-        text-align: center;
-        font-family: 'Poppins Medium', sans-serif;
-        font-weight: bold;
+
+        .poweredBy {
+            color: #6E6E6E;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: 'Poppins Medium', sans-serif;
+
         }
-        .poweredBy{
-        color: #6E6E6E;
-        text-align: center;
-        font-size: 14px;
-        font-weight: bold;
-        font-family: 'Poppins Medium', sans-serif;
-        
-        }
+
         .slider {
-        /* width: 300px; */
-        height: 200px;
-        display: flex;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-        }
-        .slide {
-        width: 100%;
-        flex-shrink: 0;
-        height: 200px;
-        scroll-behavior: smooth;
-        }
-        .slide >img{
-        scroll-snap-align: start;
-        }
-        .slide-wrap{
-        text-align: center;
-        }
-        .slide-wrap > a{
-        display: inline-flex;
-        width: 0.5rem;
-        height: 0.5rem;
-        background: white;
-        text-decoration: none;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        margin: 0 0 0.5rem 0;
-        position: relative;
-        border: 2px solid #707070;
-        }
-        .slide-wrap >a:active{
-        background-color: #464646;
-        }
-        .errorMsgs{
-        color: rgb(243, 75, 75);
-        font-size: 14px;
-        background-color: #FEEEEE;
-        padding: 5px;
-        }
-        input:focus {
-        border: 0px !important
-        }
-        input:active{
-        border: 0px !important
-        }
-        .appDownloads{
-        display: flex;
-        justify-content: space-evenly;
+            -webkit-overflow-scrolling: touch;
+            transform-style: preserve-3d;
         }
 
-        .mobileDiv{
-        text-align: center;
+        .slide {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            margin: auto;
+            z-index: 100;
+            transition: transform .5s, opacity .5s, z-index .5s;
+            scroll-behavior: smooth;
         }
-        .or{
-        color: #827D7D;
-        font-size: 19px;
+
+        .slideDeskImg {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            margin: auto;
+            z-index: 100;
+            transition: transform .5s, opacity .5s, z-index .5s;
+            scroll-behavior: smooth;
         }
-        .fromApp{
-        color: #344684;
-        font-weight: bold;
+
+        .slideDeskImg.initial,
+        .slideDeskImg.active {
+            opacity: 1;
+            position: relative;
+            z-index: 900;
         }
-        .fromAppFade{
-        color: #BCBCBC;
-        font-size: 14px;
+
+        .slide.initial,
+        .slide.active {
+            opacity: 1;
+            position: relative;
+            z-index: 900;
         }
-        .connStatus{
-        color: #344684;
-        font-weight: bold;
-        font-size: 20px;
-        opacity: .9;
+
+        .slide-wrap {
+            text-align: center;
+            overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
         }
-        .billingText{
-        color: #848484;
-        font-size: 18px;
-        font-family: 'Poppins Medium', sans-serif;
+
+        .carouselBtn {
+            display: inline-flex;
+            width: 0.5rem;
+            height: 0.5rem;
+            background: white;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 0 0.5rem 0;
+            position: relative;
+            border: 1px solid #707070;
+            transform: translateX(-100%);
         }
-        .rate{
-        color: #000000;
-        margin-bottom: 0px;
-        margin-top: 0px;
-        font-size: 25px;
-        font-weight: bold;
-        font-family: 'Poppins Medium', sans-serif;
+
+        .carouselDeskBtn {
+            display: inline-flex;
+            width: 0.5rem;
+            height: 0.5rem;
+            background: white;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 0 0.5rem 0;
+            position: relative;
+            border: 1px solid #707070;
+            transform: translateX(-100%);
         }
-        .perGb{
-        font-size: 18px;
+
+        .carouselDeskBtn.active {
+            background: #707070;
         }
-        .billdescr{
-        color: #6E6E6E;
-        font-size: 14px;
-        font-family: 'Poppins Medium', sans-serif;
-        
+
+        .carouselBtn.active {
+            background: #707070;
         }
-        .updownloads{
-        border-top: 1px solid #DCDCDC;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 3rem;
+
+        .errorMsgs {
+            color: rgb(243, 75, 75);
+            font-size: 14px;
+            background-color: #FEEEEE;
+            padding: 5px;
         }
-        .uploadTitle{
-        color:#848484;
-        font-family: 'Poppins Medium', sans-serif;
+
+        input:focus {
+            border: 0px !important;
+            border-bottom: 1px solid #3D3D3D
         }
-        .dataValue{
-        font-size: 20px;
-        font-weight: bold;
+
+        input:active {
+            border: 0px !important;
+            border-bottom: 1px solid #3D3D3D
         }
-        .arrow{
-        height: 10px;
+
+        .appDownloads {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .mobileDiv {
+            text-align: center;
+        }
+
+        .or {
+            color: #827D7D;
+            font-size: 19px;
+        }
+
+        .fromApp {
+            color: #344684;
+            font-weight: bold;
+        }
+
+        .fromAppFade {
+            color: #BCBCBC;
+            font-size: 14px;
+        }
+
+        .connStatus {
+            color: #344684;
+            font-weight: bold;
+            font-size: 20px;
+            opacity: .9;
+        }
+
+        .billingText {
+            color: #848484;
+            font-size: 18px;
+            font-family: 'Poppins Medium', sans-serif;
+        }
+
+        .rate {
+            color: #000000;
+            margin-bottom: 0px;
+            margin-top: 0px;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: 'Poppins Medium', sans-serif;
+        }
+
+        .perGb {
+            font-size: 18px;
+        }
+
+        .billdescr {
+            color: #6E6E6E;
+            font-size: 14px;
+            font-family: 'Poppins Medium', sans-serif;
+
+        }
+
+        .updownloads {
+            border-top: 1px solid #DCDCDC;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+        }
+
+        .uploadTitle {
+            color: #848484;
+            font-family: 'Poppins Medium', sans-serif;
+        }
+
+        .dataValue {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            height: 10px;
+        }
+
+        .logoImg {
+            height: 80px
+        }
+
+        .billing {
+            font-size: 10px;
+            color: #848484;
+        }
+
+        .billing>span {
+            font-size: 14px;
+            color: #000000
+        }
+
+        a {
+            text-decoration: none;
         }
     </style>
 </head>
 
 <body>
-    <div class='container'>
-        <div class='row'>
+    <!-- <div class='container'> -->
+    <!-- <div class='row'>
             <div class="col-lg-12 logo mr-5 mt-5">
-                <img src="$logo" alt='logo' />
+                <img src="$logo" class="logoImg" alt='logo'/>
+               
             </div>
+        </div> -->
 
-            <div class='col-lg-6 mb-3 welcome'>
-                Welcome to
-                $gatewayname
-                Internet service.
+    <div style="width: 80%; float:left">
+        <div >
+            <!-- <div class="gateway">
+                  
+                    $gatewayname
+                   
+                </div> -->
 
-                <div class="slide-wrap mt-5 slideDesk">
-                    <div class="slider">
+            <div class="slide-wrap mt-5 slideDesk">
+                <div class="slider">
 
-                        <img class=" slide" id='slide1' src="$image1">
-                        <img class=" slide" id='slide2' src="$image2">
-                        <img class=" slide" id='slide3' src="$image3">
-                    </div>
-                    <a href="#slide1"></a>
-                    <a href="#slide2"> </a>
-                    <a href="#slide3"></a>
+                    <img class="slideDeskImg initial" src="data:image/png;base64,$imageone">
 
                 </div>
 
-
             </div>
 
 
-            <div class="col-lg-4">
-                <div class="card card-small card-post card-post--1">
+        </div>
 
-                    <div class="card-body">
+        <div style="width: 20%; float:right">
+            <!-- <p class='billing'> Billing rate: <span> $currency $billing_rate_per_GB </span>  per GB</p> -->
+            <div class="">
 
-                        <h5 class="card-title mb-3">
-                            <div class="text-fiord-blue cardHeading ">Login</div>
-                        </h5>
-                        <p class='wicryptmsg'> Enter your wicrypt email address, and router code to login.</p>
-                        <form method="get" action="$authaction">
-                            <input type="hidden" name="tok" value="$tok">
-                            <input type="hidden" name="redir" value="$redir">
+                <div class="">
 
-                            <label> Email address</label>
-                            <div class="input-group mb-3">
+                    <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSKDvLA-4Pw26B81ZXrqrhh2olS4yvVqFtu2Z7oz09JkHNLoRlq">
+                    <p class='wicryptmsg'> Enter your wicrypt email address, and router code to login.</p>
+                    <form onsubmit="return validateForm()" action="$authaction" method="get" id="loginForm">
+                        <input type="hidden" name="tok" value="$tok">
+                        <input type="hidden" name="redir" value="$redir">
 
-                                <input id="wicryptEmail" type="email" class="form-control loginCred"
-                                    aria-label="Username" aria-describedby="basic-addon1"  maxlength="32" />
+                        <label> Email address</label>
+                        <div class="input-group mb-3">
 
-                            </div>
-                            <label> Router code</label>
+                            <input id="wicryptEmail" type="email" name="email" class="form-control loginCred"
+                                aria-label="Username" aria-describedby="basic-addon1" maxlength="32" />
 
-                            <div class="input-group mb-3">
+                        </div>
+                        <label> Router code</label>
 
-                                <input type="password" class="form-control loginCred" id='routerCode'
-                                    aria-label="Username" aria-describedby="basic-addon1" />
+                        <div class="input-group mb-3">
 
-                            </div>
-                        </form>
+                            <input type="password" name="password" class="form-control loginCred" id='routerCode'
+                                aria-label="Username" aria-describedby="basic-addon1" maxlength="6" />
+
+                        </div>
 
                         <p id='err' class='errorMsgs' style='display: none'> </p>
                         <p class='errorMsgs' style="display: $display ;"> $auth_login_failure_reason</p>
 
                         <div class='loginBtn'>
-                            <button class=" btn btn-primary wicryptColor clickLogin " id="login">
+                            <button class="btn btn-primary wicryptColor clickLogin" id="login">
                                 Login
                             </button>
                         </div>
-                        <div id='mobile' class="mobileDiv">
+                    </form>
 
-                        </div>
+                    <div id='mobile' class="mobileDiv">
 
                     </div>
 
                 </div>
-            </div>
 
-            <div class="col-lg-6 mt-5 slideMobile">
-                <div class="slide-wrap">
-                    <div class="slider mb-3">
-
-                        <img class=" slide" id='slide1' src="$image1">
-                        <img class=" slide" id='slide2' src="$image2">
-                        <img class=" slide" id='slide3' src="$image3">
-                    </div>
-                    <a href="#slide1"></a>
-                    <a href="#slide2"> </a>
-                    <a href="#slide3"></a>
-
-                </div>
-
-            </div>
-            <div class="prefooter col-lg-12"></div>
-            <div class="col-lg-12 footer">
-                <div class="col-lg-6">
-                    <p class="download"> Download Wicrypt App</p>
-                    <div class="appDownloads">
-                        <a target = "blank" href="https://apps.apple.com/ng/app/wicrypt/id1451821605">
-                            <img height="30px" src="/appStore.svg" />
-                        </a>       
-                        <a target = "blank" href ="https://play.google.com/store/apps/details?id=com.wicrypt.app">
-                            <img height="30px" src="/playStore.svg" />
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <p class="poweredBy"> Powered by <img src="wicrypt.png" height='20px' /></p>
-                </div>
             </div>
         </div>
 
-        <script>
-            var email = document.getElementById("wicryptEmail")
-            var login = document.getElementById("login")
-            var routerCode = document.getElementById('routerCode')
-            var err = document.getElementById('err')
-            var code = ''
-            var userEmail = ''
 
-            // Checking for device type
-            var isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent)
-            var isMobile = /Android/i.test(navigator.userAgent);
-            var element = document.getElementById('mobile');
-            if (isMobile) {
-                element.innerHTML = `<div>
-                    <p class='or'> or </p>
-                    <p class='fromApp'>  Login from android app <img src="/arrow.svg" class="arrow"/>  </p>
-                    <p class="fromAppFade"> Login to the router from the wicrypt app</p>
-                </div>`
-            } else
-                if (isIphone) {
-                    element.innerHTML = `<div>
-                    <p class='or'> or </p>
-                    <p class='fromApp'> Login from iphone app <img src="/arrow.svg" class="arrow"/> </p>
-                    <p class="fromAppFade"> Login to the router from the wicrypt app</p>
-                </div>`
-                } else {
-                    element.innerHTML = ''
-                }
 
-            //Validating Login
-            email.addEventListener("change", function () {
-                userEmail = email.value
-            });
-
-            routerCode.addEventListener("change", function () {
-                code = routerCode.value
-            });
-
-            login.addEventListener("click", function () {
-                let checkEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if (userEmail == '' || code.length == 0) {
-                    err.innerHTML = 'Email and Code are required'
-                    err.style.display = 'block'
-                } else
-                    if (!checkEmail.test(userEmail)) {
-                        err.innerHTML = 'Email verification failed'
-                        err.style.display = 'block'
-                    } else
-                        if (code.length !== 6) {
-                            err.innerHTML = 'Router code must be equal to 6'
-                            err.style.display = 'block'
-                        } else {
-                            login.innerHTML = "Logging In..."
-                            login.setAttribute('disabled', true)
-                            login.classList.add('disabled')
-                            err.innerHTML = ''
-                        }
-
-            });
-        </script>
 
     </div>
+
+    <!-- <div class="row">
+            <div class="col-lg-12 footer">
+                <div class="col-lg-6">
+                    <p class="download"> Download Wicrypt App</p>
+                    <div class="appDownloads">                
+                        <a target = "blank" href ="https://play.google.com/store/apps/details?id=com.wicrypt.app">
+                            <img height="30px" src="data:image/png;base64,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" />
+                        </a>
+                        <a target = "blank" href="https://apps.apple.com/ng/app/wicrypt/id1451821605">
+                            <img height="30px" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAATQAAABSCAYAAADaWyhsAAAABHNCSVQICAgIfAhkiAAAGFRJREFUeF7tXXuMVUWar+92A64iCGJExUVdRCDra1hk6Xtv2yTKAD7WjcGdMW4UjY9hVHY3bhYxJjNxfWxisouyjqPx9Y+7+MiYAZVZ/KPtcy4MOo4KCY7KCrvy2iGC+ECgu29tfge+trq6zvOec++5t6uSG5p763z11a+qfuf7qr6qItHgNHv27EkjRoz4cyKaJKWcKISYSEQT1b+FECc0WE1bvEXAIiDEN0KIPVLKPfiXiLy/8SGi/+vt7f1g48aNOxoJFDWg8EKxWOwoFAoLhRBXCCEuaIAOtkiLgEUgGwQ2VavVNW1tba/39PT8VghRzaYYs9S6EFqpVBpHRD+UUi4kogVCiAn1rKQtyyJgEag/AlLKvUKItVLKNUS0znXd/VlrkSmhdXV1Tejr67tfCHEHEY3MujJWvkXAIpBPBKSUR4QQvyCiBx3HAdFlkjIhtK6urtG9vb3/WCgU/kEIMToTza1Qi4BFoOkQkFJ+TUSPVqvVf61UKl+nXYFUCW3GjBkjx40bt4SIlhPRKWkra+VZBCwCrYEA3FEieuCLL7745ZYtW2C9pZLSIjRM9P8tEf2ciCanopkVYhGwCAwHBLYLIe53HOfFNBYQaia02bNnjxk5cuRLQogfDgf0bR0tAhaBTBD4zZEjR67buHHjV7VIr4nQisXi6Vi9IKIZtShhn7UIWAQsAlLKLVLKyyuVyq6kaCQmtHK5/AMp5a+J6IykhdvnLAIWAYuAioCUcicRXe04zu+TIJOI0Do6OuYVCoVfEdHxSQq1z1gELAIWAT8EpJQHq9XqX69fv/6/4qIUm9BKpdJPiWiFEKItbmE2v0XAImARiIhAv5Ryqeu6/x4xv5ctFqGVy+U7EBwXpwCb1yJgEbAI1IDATxzHeTLq85EJrbOzs6NarXYT0Yiowm0+i4BFwCJQCwJSyl4imus4TiWKnEiEduxEjN/bYNkokNo8FgGLQJoIIAi3t7f3B1FO8ggltGKxeCIR9RDRRWkqaWUNLwQuuODooSqbNm2qS8XrXV5QpfKkS13Az6aQ99va2jq6u7sPBYkPIzQql8tv2qDZoRBedNFFgojE+++/n03zxZR66623DnriyJEjYvv27Z5+X31VU6xiTE3M2ZcvX+798NBDD6UiL0xIvcuDPlOmTBFz584V+/btE6+++uqAio3QJQyfJv19leM4P0pMaKVS6REi+qcmrXzqak+cOFEsWrRILFiwQIwePVp88MEH4u677069nCQCedDs3btXjBgxQpx00kmemG+//Va8/vrrYuvWrUnEpvZMvQd1vcsDULDErrzySoE2ePrppy2hpdZ7vhckpfy567o/8xPta6GVSqXZRIQD2mwSQixevNgjMxAZpzwSGltAY8aM8QbXWWedJb788kvxxBNPDOh96aWXiqlTp3rE19vbKz755BPx9ttve79ff/314oQTTvBIcNeuXeL0008XV1yBcziFWLVqlWftsSUCC3Dbtm0DVgmswjPPPNOTuWfPHk8mW4cmggnSA+WhDsijyjx06JBXJ1VnEMnFF1/s6Q0Cr1Qq4rrrrvN09rMIWTZeUsABz8GaZZeYdUMdTznlFO8FoWOlDgxgMm/ePC8fcDhw4MCAjlz3t956S1x44YVeeWiT7u5uD2NOl1xyycDvKAtlr1u3zo6/oQiU/BYJgggNK5qXWjSFuPfeez2rTE8vv/yyePzxx3MBkZ9FsmTJEm+QYTC98847HmGBEJBgSWCwIn388ceem3TttdeK8847zyMFEBIGdrFY9PKwjMsvv1zMmjXLy7N//36POJF4IOsy8ZuuX5geeAZuNMsC4YCwOG3evFmsXr16wCri8vHvyJHfH71nIjSQ2Q033DBAPgcPHhywaLmOV111lTj//PO94lA2CIatXs4Tl9AY87Fjx3o6Qu6KFQjpFIIxZQw5D0jtxRexb9smRkBK+bbrul0mRIyEViqV5hMR5s6GfUKHw9vflO677z7hOE4uMPIjNB6YIICPPvrIs1wwkJ577rkBa+uaa67xBtjzzz8vJkyY4BEUDyQQD6w0/M6kd+ONN4ozzjhDrFy50iNH5MdAfOqppwZk6haSqh+smah6QO5rr73muczQA/pAFyY0Jj114DMpo2FMhMbksXPnTvHCCy947cfEzSTDuKnuIz+nu5TcAcJczjVr1ngWIAgVFj8IGt9B99tuu80Tw3VV87z00ksNnzLIRSdXlJBSLnBdd62ul4nQCqVSabPdcH7UzcTHlOBS8aDNQ2NHITToCauDyYD1Zmvp3Xff9Vyce+65R8BqgZu6dOlSzz1i6wjfqb/7DWI8h2eYUFT9VJKFlWXS47jjjvN0ZRLlPPqzLBfkqi5+BM2hMQkywbBs1hkEMn369CFYgVBvuummIXNkUQlNJVfGHDog4aUAMv3ss88G8ICrDauQ2yUP/SxHOmx2HAeRF4PuLBhCaHY3wNEmw9wKOrZfgoWDT16S3wBmawruId76JkJji4aJjgcb6g/SxoDCs3BF1e9Afn6ExqQRh9BUPfzI14/QdEssCaGxew6SmTx5shEryE1qoak6cj1UQmN3U+9T6nxhXvpbTvRY7DjO86ougwgNJ86OHz9+hw2gPTrnM3/+fGO7wf25+eabc9KmR9Xwm3TH/Be7g9OmTROXXXbZoAFpcm3Y/YJLBtcSJDZ+/HjvWfU74JCE0DD5HaYHyoXuqnuMejLpMPmyVaVaMSwf+U0up07gyMduMLB69NFHhZ8VmQWhweW88847h9QVOiCpiyu56nSNV2bb7t27p2/duvUwqzKI0IrF4rJCofBw4/VsvAZvvPHGoBVN1ggDDKEan376aeOVVDRgQsNAxxzTqaeeapzEZkKAlQG3+ZxzzvFcQ9XqAMlhgCHxnJLpO/yehNBUYgrSg8kKOvACBru+TGjqogXIFglkyMlEaOpcHMjk8OHD4uyzzx40N5eE0NglRdnQly0r08tGtdAwr8YkC/f+888/9zwELIjoK9S56nQ5UKZard5bqVQeGUJox25o+m8iGpMDPRuqwrnnniueeeaZITrklcxUC42VhqWBkACsbKoxaGo4B+fFPBXcR3UOiolPnWw3fZeU0KLoweEhvNIJkkDQKlxfdR4Q5IDvQOSoN6w1Xpn1C9vQZeO5Dz/8cCBMIgmhAU8sHCA0Q124iEJoeBakxsSK/wN7uKR5CIxu6IAMLvxAf3//1PXr1/8R2QYsNLuy+T1qWNXk5XT+FjFnGBywalolgVTyMFjC9Aj7ndsjaj69/ZI+l1U/yJs+WdUzLbnqiqdKaE8S0e1pFdLMclRCc11XvPnmm7kJz2hmXK3uFoEsEJBSrnBd9+90C237cLmxCfswYWn5WVu8G+Cbb74x4g+XVA3yhEvnlzeLBrQyLQIWge8RkFJ+7LrutAFCmzNnzrT29vaPWhWkUqkkyuWy91G3LqG+mNxfu3atZ4EFEZwqw4QTnoUM7B5oJbe0VfuErVdrIdDX1zd9w4YNf/BczlZd3YTriNU6WFRREggJH8yXIWHiGFueQIRxEuLTQGzWaouDms1rEUiOAK92eoRWKpV+S0Szk4vL35N33XWXt5m8UQmWH8IOLKk1qgVsucMJASnlRtd1/5JmzZo1cdSoUbsIh3u1SPLbTF7v6llSqzfitrzhioCUUuJKTWq1cI2g/ZeNaGzMz9XrUMNG1M+WaRHICwII38CJtDcJIfKzKbEGdEzxYzWIq/lRkNljjz1m3c6akbQCLAKREFhMrbQgEHTUTyQ4UsxkLbMUwbSiLAIREMDCAFzOfyOipRHy5zqL33alRiidp5NsG1F/W6ZFoBEIIMAWLud/CiH+phEKpFlm0OkYaZYTJgv7PbG6alc3w5Cyv1sEUkdgFSy0ljhqu6enJ3V0kgjM2zlpSerQqs/gBAt81MQxh61a5+FULxzNDUJr+i1PeXI3cSBiXnYK6LF4eTtltx6DjW/qQnC0TmZcPgdUY97TpuZFAFug4HLi4s5RzVsN4UXzI/as0SlvBz/iYEZ9ECPYNy93iWbdXugXIHV9u5tfucAF90TY6YKsWyYz+QdAaF8KIcZmVkQdBOcl9ixPt0D5hbAMl9XXsPsg/Ky1oGBo9X4JWLs4hcWmXCFwAC7nH4jovFypFVOZvBBanubP/BZJYH0sXLgwJsLNld3vPDu0j2qdwnLDAg6mCdTTU+CCwlLTkzpPa1ey89cnPJezFRYFELyKI4EanfJEaOoR4rDK1PsRHn744Za2LnQyD7NKMQeLPqSSmmku1BJao0dYcPneokArhG3khdDy4nJiAvzBBx8caH0MTmy/wukhSDi0ko+FzncXTaadvuLd2dkZKgiWGubbOOECabSnmiyhhcLY6Axe2EbTB9Y2+mQNbsW8uCEgL5zfhsQLFfqAhdsZNPkNd4wJkOVwfv6NL2DevXu3R5JB8tRDMRGrp14yg/ksWNinnXaapzPcwlrCKZIQD/RTCQ3zY/iooR54cXKC/iA9te2DRjPaQz3GCpihjmEr4qrnoR5KqsoLuk4Rz6sXZUctt9HMlKR8L7C2FbY+5WUODQMa1lAjV8lANnA3dUtDv2c0zO3U56F4dRSDHquHppVDEAAGuan+qhXNxI8BjvPqTDfTQwaeSRJKoVtoYeQdNHii9i2TFchzdH6XVTN548Z6v5VntS4gLrw4YH2rixqmsvECQ7l+K7woD30gjFCTEEujnqlWq3/fEpvT8xK2gYYMI4qsG1vHQp0LevbZZwesLlgYt9xyi686JkKLclgmBggm1PVr/nRCw+DEwAwLqQBJAtM4SQ9XwSQ/ZCR50SQlNJD1smXLIh8u6tdvVEKDC2x6maiEBjyBq+kloWMIPNBWLRTG8+OWOD4oT6dsNDp4FdfvsWujx8XpbmdQELCOKTo9DxLUke9RgEujh0CYyFIlNPwO95LJDLIgH3rr9zVgEJrms+JaVRi8IEdYfHHuVEWd2e0LCttQ3T7UCy8PFRe42SBWuHxImOdUXXp8Z4oRVAkNuKsyYekCL5AcJ5CZesJyWLnABZdmt4KlJqWcCwvtNCnlzmY/4DEvW5/QsRq12qm7lToR6L8H6en3kjA9gwGERQZ1lVAv27RwAyKDZaISDMgAsngOEHjGdeUhA+XphMGDHvJ4ni7oLgmdNKPOzemrrKgnLqfWLUT9BWN6Ger9GgSFOVLorSd9MQjlQhedrPRyW2GRCAc8SinHtswR3HlZ6eRO1gjXU3ePTBaY6nYGWZMmQgsiQH0w6bL19sHAhL5+loGePy6eIDUM/CjhPBwkCwsuyFKJQmgoFy4vW5+QBwvIz93VF7T0euqEFrTTQz0+K+yQBJ1087RlL870AucdOIIbX9iFgSQQhj8TdxCGSwzOoc4d+b119bcz5tFMLphOaGEDBJqpZIn/q4NEJ6iwEBe9/KRWBOSgzqrF54ciSAd6+a0aRiE0fQ4zzF3WrWa9nmqZQVvr9MWgMC9B3/9c775aa1/Xnx90SUorXGOnd4y0AUsqr5YJ6ThlRu2gOk5+QadJCEW3ENVBohNalD2lsJjYja11hwMGPM+H4V8/dxSY+y1ERCE03eLye2Gobau+CPR6qmUGkbreXpjsN7mlarn6goMahhKn7+Uh76Br7KBQK2yB0i2EPACdZA4oid76QIJL4efm4DeeXPYjCn2AhL3xoXPQMzqhRQl2TfJMVOxAcHxXq8l6C5ug94s5TKJz0DN62Iaf9Rh1NdYPn7zEUEZtPzXfkIuGjxFa0wfY6u5UEnCyeKYenUXd6hS3Dqa3easTmooR6or5NnVRw2QNRbHQkhCaPp+lkr0ltPDeLKX8F9d1lyHnwNV1rXD7E966mANRO2Y4HNnnyHp+Qp+Qj1sjk9s5nAjNZF2aLNesCC0LCw1tyiEiUfpDM58egnAN13W7BxHazJkzRxx//PF7m/0oobxsg+JOVI+4NP0NH2XbkB7vpUfT64QWtsEb9dUt5KA5tChzS+oiBxYl1Hgrv0Gq1ysKFiwrbA9oFEJLMoemxg5ClyQWmr4YEWUOLQrR5T2PlPKr7777bsJ7773XO4jQ8J9WWO3M2+JA1taZvroV9ZDJIPKJarHonV2/dUslLd0KCZuT0xc5orrtOrnHGdh6ECtWadUUhdB0Yglrf7399HpGdTnjxBjmnaTi6Merm/zMoNvSp0yZMmrixIn/Q0SnxhGat7y1TpCmVZ96WGdxwwS4bvoAQKApJsI5meLQgkIQ9PxhcWhhwbJ6xHtY+APrreMR9fZ6/TmTRRqF0HRcw/qA3lf1ekYlNNRftWjD8IWe6inPr7zySuiqaFrjIi05Uso/7tmz50+3bt162Eho+LJcLt8hhPhFWoU2So7p+Ol66xIlNKFWnXSrKE6AZFDcmN9OAZPFAWsKeqj7MnULzBT47Ec2GGi6exl1g7lpHhXlwFLzC5o1HdUdtsoZRFS6legXBqKTqCnWLw6h6fL8QoZM+z3j9Jta+2yKz//EcZwnVXmDLLRjPxTK5fJWIcTZKRZcd1GN3t+ZNBA0DlC6NRDV3eQygs4AMwXW8mILCAL1Q0I8l7p3EN+ZouN1QuN9ibAkePsRh1Loe0PD3FMdM79FEpQDjDBZfuKJJ3oEDBLQy/NrO/0FoB5zpO/l1BeneNId2OEFoB/rgzqYXhZxCA0ydB05WBh1xt9oV/3CmLAg5zh9so55tzuO82dCiGoYoaHCPxJC/EcdlcukqEYtEIRtd0mrslEOJQwqK8g9Mq1yqhu1/eTCysC+xaDTNvAsLCBYdWEpymKESUbSE1j89l2ijKCpDD2uznQKblBd/Ug7LqGF7WPVdcCcXVDMYlj7NPD3HzuOgzuFByWTheZlKJfLm4QQ5zdQ4VSKbkSwbZQVvDQqp6+OJXEbdHxYdxOh4U2OQQ0iNSUMDswBmbZSmUITMOj1s71UuXEtM10n1AEvtaBdAfwMiBhY6KfU6jLVwzPV30yBwnhhYB+nevy5Lg8vP2DmF9Ufl9AgH6QW1E7Ig/piWibocMg0+mhGMtY7jlM0yfYltFaIS+PG1Y9yyQhkT2zYqlZaZfPhgSyPXYu48nWrC6TERwWpFpRKLhiocFugAz4oG25a0LE8QbFWfJQOy8IgxwBPcn6Zqf4gTj7hVT9/DXWFVRa2TUiVyy6jPmfoh72KF55l9y8MM8hTjyzitonaxqoLz6cBo+y49Y1aXr3yqXFnepm+hIaMpVLpSSK6vV6KZlVOmCWglovGxoDC4ESH8Dujy6RrvcgsK5xUuUkCa4P0ShJBX4962jKaCwEp5S9d18XCpTEFElpXV1d7X19fNxEZzbtmgsJ0zhbrH+X4GMzJ4GM6jibMbWgmnFhXS2jN2GqtrbOUcl17e/vC7u7uvkSEhoe6urom9PX1VYhoaivAxe4H1yWuGa+6D5DR7Oa7X5taQmuF3t5Sdfi0Wq3OrFQqXwfVKtBC4wc7OzvPrVarvyOiMS0Fka2MLwKW0GznyAsC2N7U398/c8OGDQgnC0yRCA0SOjo65hUKhTVENCJMqP29+RGwhNb8bdgKNZBSYo/mQtd134pSn8iEBmGtsosgCjDDPQ8viDAOWB2r5SINuPrqqmAL3TQ03LtK1vUfshugZpdTFVAsFm8noseIaGTWNbHyLQIWgeGJgJTyiJRySaVSeSYOArEsNBbc0dExp62tbbUQ4uQ4hdm8FgGLgEUgAgJfSCmvcF13Y4S8g7IkIrRjc2qT29rafoWTl+MWavNbBCwCFgETAlLKD6WUV1cqlf9NglBiQkNhc+bM+ZP29nbs+fyrJIXbZywCFgGLACMgpVzT3t6+qLu7+1BSVGoitGOF4vb15UKIB5r9suKkINrnLAIWgeQI4IZgIvqZ4zgPCCFkcknKnQK1CMGznZ2dHdVqdQUR/UWtsuzzFgGLwPBAQEr5u0KhsLSnp2d9GjVOw0JT9aBisbioUCg80uznqaUBrpVhEbAI+CKwTQix3HGcVbVaZYMIKAvAZ8yYMfLkk0/+qZTyfiIal0UZVqZFwCLQfAhIKfcLIf553759K7ds2XIk7RqkbaEN0q9UKoHM7hNC3GXj1tJuOivPItA8CCCuTAixEmTmui5ILZOUKaGxxseIbQERXS2EmN/sV+Vl0hJWqEWg9RA4IKX8jZTy10T0RpZExtDVhdDUdsL9n6NGjSoXCgWQ21VEdE7rtaOtkUVg2CKw7RiBrT548GAP35dZLzTqTmh6xWC99ff3TyoUCt6nWq1OIiLvI6WcJITA3/aUj3r1CFuORcAHAZx6IYTYQUQ7pJTep1Ao7KhWq96nra1tRz2ssKAG+n8eLpe2sQfhGwAAAABJRU5ErkJggg==" />
+                        </a>    
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="poweredBy"> Powered by <img src="data:image/png;base64, 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" height='20px' /></p>
+                </div>
+            </div>
+        </div>
+         -->
+    <!-- </div> -->
+
+    <script>
+        var email = document.getElementById("wicryptEmail")
+        var login = document.getElementById("login")
+        var routerCode = document.getElementById('routerCode')
+        var err = document.getElementById('err')
+        let checkEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var code = ''
+        var userEmail = ''
+
+        var isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent)
+        var isMobile = /Android/i.test(navigator.userAgent);
+        var element = document.getElementById('mobile');
+        if (isMobile) {
+            element.innerHTML = `<div>
+                    <p class='or'> or </p>
+                    <p class='fromApp'>  Login from android app <img src="data:image/svg;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAOCAYAAADNGCeJAAAABHNCSVQICAgIfAhkiAAAATVJREFUOE+lkk9OwkAYxd+jxK0s2ekNrJbEpSwcwkrrCYQTGJYGULQQt72B3ECMGwMsegDEHgFu0LXSfmZKmhjin6nObma+95vve/MIg+XUPJco7M3G7ZufymnAgqP6CxI7EIQryzoLny8XX+mMYLYa2BZkpIEiEoFovoy7o02gEUyL7GqvZG0VhwRO9V4Ew/h91QqDXpRBjWGZ4EANGoT4JLbTscFmOGmH+p6VY6+KQuHIxLusRkTKpLgAy/osluT2dXJ1TUf1o/SVfyxJgdzn+tth52WJoE7yUOsSwdN80jnJ7Zldv9stxvEDuG4gSdCaTzt+6lmejvQUENyTLIlgGYNuZn4umKM8n+RFGgvgMX5bNT7Hwhjm1Po6X+ebY/0ptBXlBQLaFHFn027wnTW5PPvN3w9ECHA5tPmGbgAAAABJRU5ErkJggg==" class="arrow"/>  </p>
+                    <p class="fromAppFade"> Login to the router from the wicrypt app</p>
+                </div>`
+        } else
+            if (isIphone) {
+                element.innerHTML = `<div>
+                    <p class='or'> or </p>
+                    <a href="com.ugarsoft.wicrypt://TOTO" class='fromApp'>  
+                        Login from iphone app <img src="data:image/svg;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAOCAYAAADNGCeJAAAABHNCSVQICAgIfAhkiAAAATVJREFUOE+lkk9OwkAYxd+jxK0s2ekNrJbEpSwcwkrrCYQTGJYGULQQt72B3ECMGwMsegDEHgFu0LXSfmZKmhjin6nObma+95vve/MIg+XUPJco7M3G7ZufymnAgqP6CxI7EIQryzoLny8XX+mMYLYa2BZkpIEiEoFovoy7o02gEUyL7GqvZG0VhwRO9V4Ew/h91QqDXpRBjWGZ4EANGoT4JLbTscFmOGmH+p6VY6+KQuHIxLusRkTKpLgAy/osluT2dXJ1TUf1o/SVfyxJgdzn+tth52WJoE7yUOsSwdN80jnJ7Zldv9stxvEDuG4gSdCaTzt+6lmejvQUENyTLIlgGYNuZn4umKM8n+RFGgvgMX5bNT7Hwhjm1Po6X+ebY/0ptBXlBQLaFHFn027wnTW5PPvN3w9ECHA5tPmGbgAAAABJRU5ErkJggg==" class="arrow"/> </a>
+                    <p class="fromAppFade"> Login to the router from the wicrypt app</p>
+                </div>`
+            } else {
+                element.innerHTML = ''
+            }
+
+        email.addEventListener("change", function () {
+            userEmail = email.value
+        });
+
+        routerCode.addEventListener("change", function () {
+            code = routerCode.value
+        });
+
+        function validateForm() {
+
+
+            if (userEmail == '' || code.length == 0) {
+                err.innerHTML = 'Email and Code are required'
+                err.style.display = 'block'
+                return false;
+            } else
+                if (!checkEmail.test(userEmail)) {
+                    err.innerHTML = 'Email verification failed'
+                    err.style.display = 'block'
+                    return false;
+                } else
+                    if (code.length !== 6) {
+                        err.innerHTML = 'Router code must be six digit numbers'
+                        err.style.display = 'block'
+                        return false;
+                    } else {
+
+                        login.innerHTML = "Logging In...";
+                        login.setAttribute('disabled', true);
+                        login.classList.add('disabled');
+                        err.innerHTML = '';
+                        return true;
+
+                    }
+
+        };
+
+    </script>
+
+
 </body>
 
 </html>
