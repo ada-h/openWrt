@@ -195,15 +195,9 @@
         }
 
         .mobilebilling>span {
-            font-size: 16px;
+            font-size: 14px;
             color: #000000
         }
-
-        .billing {
-            display: none;
-        }
-
-
 
         label {
             font-size: 14px;
@@ -386,17 +380,26 @@
             text-align: center;
             padding: 0px 50px 0px 50px;
         }
-        .note{
-            background-color: #F5F4F4;
-            padding: 15px;
-            font-size: 13px;
+        .billing{
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+        .phoneLabel{
+            color: #6E6E6E;
+            font-size: 14px;
+        }
+        .errorMsgs {
+            color: rgb(243, 75, 75);
+            font-size: 14px;
+            background-color: #FEEEEE;
+            padding: 5px;
         }
         .goHome{
-            color: #434343;
-            font-size: 18px;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
+                color: #434343;
+                font-size: 18px;
+                margin-bottom: 2rem;
+                text-align: left;
+            }
 
         @media (min-width: 992px) and (min-height: 600px) {
             .download {
@@ -471,7 +474,7 @@
             }
 
             .billing>span {
-                font-size: 16px;
+                font-size: 14px;
                 color: #000000
             }
 
@@ -487,15 +490,9 @@
             .logo {
                 height: 50px;
             }
-            .t-14{
-                font-size: 14px;
-            }
 
             .t-15 {
                 font-size: 15px;
-            }
-            .t-16{
-                font-size: 16px;
             }
 
             div#captioned-gallery {
@@ -510,14 +507,82 @@
                 width: 95%;
                 height: 90%
             }
-            .errorMsgs {
-            color: rgb(243, 75, 75);
-            font-size: 14px;
-            background-color: #FEEEEE;
-            padding: 5px;
+           
+           
+
         }
-       
+        .lds-ellipsis {
+            display: inline-block;
+            position: relative;
+            top: -32px;
+            right: 10%;
+
         }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 20px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #F5F5F5;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 8px;
+            /* background:#D4FCFF; */
+            background: #F5F5F5;
+            animation: lds-ellipsis1 1s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 8px;
+            animation: lds-ellipsis2 1s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            /* background:#D4FCFF; */
+            background: #F5F5F5;
+            left: 32px;
+            animation: lds-ellipsis2 1s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 56px;
+            animation: lds-ellipsis3 1s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(24px, 0);
+            }
+        }
+
     </style>
 </head>
 
@@ -566,45 +631,58 @@
                 <div class="card">
                     <div class='goHome'>
                          
-                        <a class= 'text-grey' href="./splash.html"> < Home</a>
+                        <a href="./enugu.html" class='text-grey'> < Home</a>
                     </div>
                    
                     <p class='text-grey'>
-                        <span class='gatewayName bold'> Voucher Payment Details</span>
+                        <span class='gatewayName bold'> Voucher Purchase</span>
                     </p>
-                   
-                   
-                    <p class='billing'>Make a bank transfor of <span> $currency $voucher_amount</span> to the following account details</p>
+                    <p class='billing text-left'>To purchase voucher, enter amount in Naira, enter your phone number and click on pay</p>
               
-                    <div class='text-left'>
-                        <p class='t-14'> Bank</p>
-                        <p class='bold t-16 '> $voucher_bank</p>
-                    </div>
-                    <div class='text-left'>
-                        <p class='t-14'> Account Number</p>
-                        <p class='bold t-16 '> $voucher_account_number</p>
-                    </div>
-                    <div class='text-left mb-3'>
-                        <p class='t-14'> Account Name</p>
-                        <p class='bold t-16 '> $voucher_account_name</p>
-                    </div>
-                    <div class='text-left note'>
-                        <p> NOTE:</p>
-                        This transaction attracts a bank charge of 0.75% per transaction. This is a unique account number 
-                        assigned only to your phone number
-                    </div>
-                    <p class='t-14'> Already have a voucher?</p>
+                    <form onsubmit="return validateForm()" action="$authaction" method="get" id="loginForm">
+                        <input type="hidden" name="form_type" value="voucher_purchase_pay">
 
+
+                        <label class='float-left mb-3'> Enter Voucher amount (in Naira) </label>
+                        <div class=" mb-3">
+
+                            <input id="voucherAmount" required type="text" name="voucher_amount" class="form-control loginCred"
+                                aria-label="Username" aria-describedby="basic-addon1" maxlength="10" />
+
+                        </div>
+                        <label class='float-left mb-3'>Phone Number
+                            <span class="tooltip">i
+                                <span class="tooltiptext">Your voucher code will be sent to this phone number</span>
+                            </span>
+                        </label> 
+
+                        <div class=" mb-3">
+
+                            <input type="text" required name="phone_number" class="form-control loginCred" id='phoneNumber'
+                                aria-label="Username" aria-describedby="basic-addon1" maxlength="15" />
+
+                        </div>
+
+                        <p id='err' class='errorMsgs' style='display: none'> </p>
+                        <p class='errorMsgs' style="display: $display ;"> $voucher_error_message</p>
+
+
+                        <button class="btn loginBtn" id="login">
+                           Pay
+                        </button>
+                        <p class='dntHave'> Already have a voucher?</p>
+
+                    </form>
                     <!-- <form method="get" action="$authaction">
                         <input type="hidden" name="form_type" value="voucher_login">
-                        <input type="submit" class="btn voucherBtn" value="Login Here">
+                        <input type="submit" class="btn voucherBtn" value="Login With Voucher">
                        
                     </form>  -->
-                    <a href = "./splash.html" class="btn voucherBtn">
-                        Login Here
-                       
+                    <a href = "./voucher_login.html" class="btn voucherBtn">
+                        Login With Voucher
+                        
                     </a>
-                   
+                    </div>
                 </div>
             </div>
             <div class='footer'>
@@ -626,6 +704,48 @@
 
         </div>
     </div>
+    <script>
+        var amt = document.getElementById("voucherAmount")
+        var login = document.getElementById("login")
+        var phone = document.getElementById('phoneNumber')
+        var err = document.getElementById('err')
+        var code = ''
+        var voucherAmount = ''
+
+        amt.addEventListener("change", function () {
+            voucherAmount = amt.value
+        });
+
+        phone.addEventListener("change", function () {
+            code = phone.value
+        });
+
+        function validateForm() {
+            if (voucherAmount == '' || code.length == '') {
+                err.innerHTML = 'Amount and Phone Number are required'
+                err.style.display = 'block';
+                return false;
+            } else {
+                    var node = document.createElement("div");
+                    var elips1 = document.createElement("div");
+                    elips1.className = "lds-ellipsis"
+                    var elips2 = document.createElement("div");
+                    var elips3 = document.createElement("div");
+                    var elips4 = document.createElement("div");
+                    elips1.appendChild(elips2);
+                    elips1.appendChild(elips3);
+                    elips1.appendChild(elips4);
+                    node.appendChild(elips1);
+                    login.innerHTML = '';
+                    login.appendChild(node);
+                    login.setAttribute('disabled', true);
+                    login.classList.add('disabled');
+                    err.innerHTML = '';
+                    return true;
+                }
+        };
+
+    </script>
 
 </body>
 

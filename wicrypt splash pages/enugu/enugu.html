@@ -680,7 +680,7 @@
                                 <label class='mb-3 float-left'> Enter email address </label>
                                 <div class=" mb-3">
     
-                                    <input id="wicryptEmail" type="email" name="email" class="form-control loginCred"
+                                    <input id="wicryptEmail" required type="email" name="email" class="form-control loginCred"
                                         aria-label="Username" aria-describedby="basic-addon1" maxlength="32" />
     
                                 </div>
@@ -689,7 +689,7 @@
                                 <label class='mb-3 float-left'> Enter phone number </label>
                                 <div class=" mb-3">
 
-                                    <input id="wicryptEmail" type="phoneNumber" 
+                                    <input id="wicryptEmail" required type="phoneNumber" 
                                         name="phoneNumber" class="form-control loginCred"
                                         aria-label="Username" aria-describedby="basic-addon1" maxlength="32" />
 
@@ -730,7 +730,7 @@
 
                         <div class=" mb-3">
 
-                            <input type="password" name="password" class="form-control loginCred" id='routerCode'
+                            <input type="password" required name="password" class="form-control loginCred" id='routerCode'
                                 aria-label="Username" aria-describedby="basic-addon1" maxlength="6" />
 
                         </div>
@@ -743,9 +743,12 @@
                             Login
                         </button>
                         <p class='dntHave'> Don't have Wicrypt App?</p>
-                        <button class="btn voucherBtn">
+                        <a href = "./voucher_login.html" class="btn voucherBtn">
                             Login With Voucher
-                        </button>
+                            <!-- <button class="btn voucherBtn">
+                                Login With Voucher
+                            </button> -->
+                        </a>
 
                     </form>
                     </div>

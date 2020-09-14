@@ -153,7 +153,8 @@
             color: #FFFFFF;
             background-color: #344684;
         }
-        .voucherBtn{
+
+        .voucherBtn {
             font-size: 15px;
             width: 80%;
             border-radius: 50px;
@@ -164,7 +165,8 @@
             color: #6E6E6E;
             background-color: #FFFFFF;
         }
-        .dntHave{
+
+        .dntHave {
             font-size: 12px;
             color: #3D3D3D;
             margin: 0;
@@ -195,24 +197,14 @@
         }
 
         .mobilebilling>span {
-            font-size: 16px;
+            font-size: 14px;
             color: #000000
         }
 
-        .billing {
-            display: none;
-        }
-
-
-
         label {
-            font-size: 14px;
+            font-size: 11px;
             cursor: pointer;
             color: #3D3D3D;
-        }
-
-        input {
-            display: none;
         }
 
         .adImg {
@@ -253,7 +245,7 @@
             z-index: 1;
             bottom: 125%;
             left: 50%;
-            margin-left: -60px;
+            margin-left: -264px;
             opacity: 0;
             transition: opacity 0.3s;
         }
@@ -386,19 +378,55 @@
             text-align: center;
             padding: 0px 50px 0px 50px;
         }
-        .note{
-            background-color: #F5F4F4;
-            padding: 15px;
-            font-size: 13px;
-        }
-        .goHome{
-            color: #434343;
-            font-size: 18px;
+
+        .billing {
             margin-bottom: 2rem;
-            text-align: left;
+            margin-top: 2rem;
         }
 
+        .phoneLabel {
+            color: #6E6E6E;
+            font-size: 14px;
+        }
+
+        .errorMsgs {
+            color: rgb(243, 75, 75);
+            font-size: 12px;
+            background-color: #FEEEEE;
+            padding: 5px;
+        }
+
+        .goHome {
+            color: #434343;
+            font-size: 18px;
+            margin-bottom: 1rem;
+            text-align: right;
+        }
+
+        .t-15 {
+            font-size: 15px;
+        }
+
+        .t-12 {
+            font-size: 12px;
+        }
+
+
         @media (min-width: 992px) and (min-height: 600px) {
+            .emailnphone {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .left {
+                width: 50%;
+            }
+
+            .right {
+                width: 50%;
+                margin-left: 1em
+            }
+
             .download {
                 text-align: left;
             }
@@ -466,12 +494,12 @@
                 display: block;
                 font-size: 13px;
                 color: black;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
                 margin-top: 1rem;
             }
 
             .billing>span {
-                font-size: 16px;
+                font-size: 14px;
                 color: #000000
             }
 
@@ -487,16 +515,6 @@
             .logo {
                 height: 50px;
             }
-            .t-14{
-                font-size: 14px;
-            }
-
-            .t-15 {
-                font-size: 15px;
-            }
-            .t-16{
-                font-size: 16px;
-            }
 
             div#captioned-gallery {
 
@@ -510,13 +528,186 @@
                 width: 95%;
                 height: 90%
             }
-            .errorMsgs {
-            color: rgb(243, 75, 75);
-            font-size: 14px;
-            background-color: #FEEEEE;
-            padding: 5px;
+
+
+
         }
-       
+
+        input[name="tabs"] {
+            display: none;
+        }
+
+        input[name="tabs"]#tab-1:checked~.content .tab:nth-of-type(1) {
+            display: inline-block;
+        }
+
+        input[name="tabs"]#tab-1:checked~.tabs label:nth-child(1) {
+            color: #242b36;
+        }
+
+        input[name="tabs"]#tab-1:checked~.tabs label:nth-child(1):after {
+            width: calc(100% - 40px);
+            transition: .3s;
+        }
+
+        input[name="tabs"]#tab-2:checked~.content .tab:nth-of-type(2) {
+            display: inline-block;
+        }
+
+        input[name="tabs"]#tab-2:checked~.tabs label:nth-child(2) {
+            color: #242b36;
+        }
+
+        input[name="tabs"]#tab-2:checked~.tabs label:nth-child(2):after {
+            width: calc(100% - 40px);
+            transition: .3s;
+        }
+
+        input[name="tabs"]#tab-3:checked~.content .tab:nth-of-type(3) {
+            display: inline-block;
+        }
+
+        input[name="tabs"]#tab-3:checked~.tabs label:nth-child(3) {
+            color: #242b36;
+        }
+
+        input[name="tabs"]#tab-3:checked~.tabs label:nth-child(3):after {
+            width: calc(100% - 40px);
+            transition: .3s;
+        }
+
+        input[name="tabs"]#tab-4:checked~.content .tab:nth-of-type(4) {
+            display: inline-block;
+        }
+
+        input[name="tabs"]#tab-4:checked~.tabs label:nth-child(4) {
+            color: #242b36;
+        }
+
+        input[name="tabs"]#tab-4:checked~.tabs label:nth-child(4):after {
+            width: calc(100% - 40px);
+            transition: .3s;
+        }
+
+        .tabs {
+            box-shadow: 0 20px 50px -25px rgba(0, 0, 0, 0.3);
+            overflow-X: auto;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .tabs label {
+            display: inline-block;
+            padding: 18px;
+            position: relative;
+            color: #bbc3d1;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .tabs label:after {
+            content: '';
+            width: 0;
+            height: 4px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: .1s;
+        }
+
+        .container {
+            margin: 25px auto;
+            overflow: hidden;
+        }
+
+        .container .tab {
+            display: none;
+            padding: 0 20px;
+        }
+
+        .mr1 {
+            margin-right: 1.5rem;
+        }
+
+        .lds-ellipsis {
+            display: inline-block;
+            position: relative;
+            top: -32px;
+            right: 15%;
+
+        }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 20px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #F5F5F5;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 8px;
+            /* background:#D4FCFF; */
+            background: #F5F5F5;
+            animation: lds-ellipsis1 1s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 8px;
+            animation: lds-ellipsis2 1s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            /* background:#D4FCFF; */
+            background: #F5F5F5;
+            left: 32px;
+            animation: lds-ellipsis2 1s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 56px;
+            animation: lds-ellipsis3 1s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(24px, 0);
+            }
+        }
+        button[disabled]{
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -529,27 +720,27 @@
                 <div id="captioned-gallery" class="centered ">
                     <figure class="slider">
                         <figure>
-                            <a target= 'blank' href ="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://www.kopasaids.com.ng/">
                                 <img src="$router_base_url/$imageone">
                             </a>
                         </figure>
                         <figure>
-                            <a target= 'blank' href ="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://www.kopasaids.com.ng/">
                                 <img src="$router_base_url/$imagetwo">
                             </a>
                         </figure>
                         <figure>
-                            <a target= 'blank' href ="https://www.kopasaids.com.ng/"> 
-                            <img src="$router_base_url/$imagethree">
+                            <a target='blank' href="https://www.kopasaids.com.ng/">
+                                <img src="$router_base_url/$imagethree">
                             </a>
                         </figure>
                         <figure>
-                            <a target= 'blank' href ="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://www.kopasaids.com.ng/">
                                 <img src="$router_base_url/$imageone">
                             </a>
                         </figure>
                         <figure>
-                            <a target= 'blank' href ="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://www.kopasaids.com.ng/">
                                 <img src="$router_base_url/$imagetwo">
                             </a>
                         </figure>
@@ -564,50 +755,102 @@
 
             <div class="mobileCenter">
                 <div class="card">
-                    <div class='goHome'>
-                         
-                        <a class= 'text-grey' href="./splash.html"> < Home</a>
-                    </div>
-                   
                     <p class='text-grey'>
-                        <span class='gatewayName bold'> Voucher Payment Details</span>
+                        <span class='gatewayName bold'> Welcome!</span>
                     </p>
-                   
-                   
-                    <p class='billing'>Make a bank transfor of <span> $currency $voucher_amount</span> to the following account details</p>
-              
-                    <div class='text-left'>
-                        <p class='t-14'> Bank</p>
-                        <p class='bold t-16 '> $voucher_bank</p>
-                    </div>
-                    <div class='text-left'>
-                        <p class='t-14'> Account Number</p>
-                        <p class='bold t-16 '> $voucher_account_number</p>
-                    </div>
-                    <div class='text-left mb-3'>
-                        <p class='t-14'> Account Name</p>
-                        <p class='bold t-16 '> $voucher_account_name</p>
-                    </div>
-                    <div class='text-left note'>
-                        <p> NOTE:</p>
-                        This transaction attracts a bank charge of 0.75% per transaction. This is a unique account number 
-                        assigned only to your phone number
-                    </div>
-                    <p class='t-14'> Already have a voucher?</p>
+                    <p class='billing text-center'>Please fill out the form and Enjoy free Internet</p>
 
-                    <!-- <form method="get" action="$authaction">
-                        <input type="hidden" name="form_type" value="voucher_login">
-                        <input type="submit" class="btn voucherBtn" value="Login Here">
-                       
-                    </form>  -->
-                    <a href = "./splash.html" class="btn voucherBtn">
-                        Login Here
+                    <div class="container">
+                        <div class="emailnphone">
+                            <div class='left'>
+                                <label class='mb-3 float-left'> Name</label>
+                                <div class=" mb-3">
+
+                                    <input required type="text" name="name" class="form-control loginCred"
+                                        aria-label="Username" aria-describedby="basic-addon1"
+                                        maxlength="64" />
+
+                                </div>
+                            </div>
+                            <div class='right'>
+                                <label class='mb-3 float-left'> Phone number </label>
+                                <div class=" mb-3">
+
+                                    <input type="tel" required name="phonenumber" maxlength="24"
+                                        class="form-control loginCred" aria-label="Username"
+                                        aria-describedby="basic-addon1" />
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <p class='billing text-left t-12'>Who would you like to benefit from
+                            this programme? </p>
+                        <div class="emailnphone">
+                            <div class='left'>
+                                <label class='mb-3 float-left'> Name</label>
+                                <div class=" mb-3">
+
+                                    <input type="text" name="refname1" required
+                                        class="form-control loginCred" aria-label="Username"
+                                        aria-describedby="basic-addon1" maxlength="64" />
+
+                                </div>
+                            </div>
+                            <div class='right'>
+                                <label class='mb-3 float-left'> Phone number </label>
+                                <div class=" mb-3">
+
+                                    <input type="tel" required name="refphone1"
+                                        class="form-control loginCred" aria-label="Username"
+                                        aria-describedby="basic-addon1" maxlength="24" />
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <p class='t-12 text-left'> Would you like to use solar products </p>
+                            <div class="text-left">
+                                <label class="mr1">Yes
+                                    <input type="radio" id="yes" name="liketouseolar" value="yes">
+
+                                </label>
+                                <label class="">No
+                                    <input type="radio" id="no" name="liketouseolar" value="no">
+                                </label>
+
+                            </div>
+
+
+                        </div>
+                        <p id='err' class='errorMsgs' style='display: none'> </p>
+                        <p class='errorMsgs' style="display: $display ;"> $referral_error</p>
+                        <!-- <input type="checkbox" id="myCheck">  -->
+                        <span class="t-12 red">Clicking Submit means that you agree to all our terms and conditions.  <span class="tooltip">i
+                            <span class="tooltiptext">You have given us consent to use the data provided for marketing.</span>
+                        </span></span>
+                        <button class="btn loginBtn" id="login">
+                            Submit
+                        </button>
+
+                    </div>
+                </form>
+                <p class='dntHave'> Already have a valid Voucher?</p>
+
+                <form method="get" action="$authaction">
+                    <input type="hidden" name="form_type" value="voucher_login">
+                    <!-- <input type="submit" class="btn voucherBtn" value="Login With Voucher"> -->
+                    <a href = "./voucher_login.html" class="btn voucherBtn">
+                        Login With Voucher
                        
                     </a>
                    
+                </form> 
                 </div>
             </div>
             <div class='footer'>
+                <p class='none'> wicrypt</p>
                 <div class='poweredby'>
                     Powered by <a href="https://wicrypt.com/">
                         <img src="data:image/png;base64, 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"
@@ -626,7 +869,40 @@
 
         </div>
     </div>
+    <script>
 
+
+        function validateForm() {
+
+            var node = document.createElement("div");
+            var elips1 = document.createElement("div");
+            elips1.className = "lds-ellipsis"
+            var elips2 = document.createElement("div");
+            var elips3 = document.createElement("div");
+            var elips4 = document.createElement("div");
+            elips1.appendChild(elips2);
+            elips1.appendChild(elips3);
+            elips1.appendChild(elips4);
+            node.appendChild(elips1);
+            login.innerHTML = '';
+            login.appendChild(node);
+            login.setAttribute('disabled', true);
+            login.classList.add('disabled');
+            err.innerHTML = '';
+            return true;
+        };
+        // function disableFunction() {
+        // var login = document.getElementById("login");
+        // var checkBox = document.getElementById("myCheck");
+        // console.log(checkBox, 'i am check box')
+        // if (checkBox.checked == true){
+        //     login.removeAttribute("disabled");
+        // } else {
+        //     login.setAttribute("disabled", "true");
+        // }
+        // }
+
+    </script>
 </body>
 
 </html>

@@ -153,7 +153,8 @@
             color: #FFFFFF;
             background-color: #344684;
         }
-        .voucherBtn{
+
+        .voucherBtn {
             font-size: 15px;
             width: 80%;
             border-radius: 50px;
@@ -164,7 +165,8 @@
             color: #6E6E6E;
             background-color: #FFFFFF;
         }
-        .dntHave{
+
+        .dntHave {
             font-size: 12px;
             color: #3D3D3D;
             margin: 0;
@@ -195,12 +197,8 @@
         }
 
         .mobilebilling>span {
-            font-size: 16px;
+            font-size: 14px;
             color: #000000
-        }
-
-        .billing {
-            display: none;
         }
 
 
@@ -386,17 +384,28 @@
             text-align: center;
             padding: 0px 50px 0px 50px;
         }
-        .note{
-            background-color: #F5F4F4;
-            padding: 15px;
-            font-size: 13px;
-        }
-        .goHome{
+
+        .goHome {
             color: #434343;
             font-size: 18px;
             margin-bottom: 2rem;
             text-align: left;
         }
+
+        .t-14{
+            font-size: 14px;
+        }
+        .t-15 {
+            font-size: 15px;
+        }
+
+        .errorMsgs {
+            color: rgb(243, 75, 75);
+            font-size: 14px;
+            background-color: #FEEEEE;
+            padding: 5px;
+        }
+
 
         @media (min-width: 992px) and (min-height: 600px) {
             .download {
@@ -471,7 +480,7 @@
             }
 
             .billing>span {
-                font-size: 16px;
+                font-size: 14px;
                 color: #000000
             }
 
@@ -487,16 +496,6 @@
             .logo {
                 height: 50px;
             }
-            .t-14{
-                font-size: 14px;
-            }
-
-            .t-15 {
-                font-size: 15px;
-            }
-            .t-16{
-                font-size: 16px;
-            }
 
             div#captioned-gallery {
 
@@ -510,13 +509,79 @@
                 width: 95%;
                 height: 90%
             }
-            .errorMsgs {
-            color: rgb(243, 75, 75);
-            font-size: 14px;
-            background-color: #FEEEEE;
-            padding: 5px;
+
+
         }
-       
+        .lds-ellipsis {
+            display: inline-block;
+            position: relative;
+            top: -32px;
+            right: 15%;
+
+        }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 20px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #F5F5F5;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 8px;
+            /* background:#D4FCFF; */
+            background: #F5F5F5;
+            animation: lds-ellipsis1 1s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 8px;
+            animation: lds-ellipsis2 1s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            /* background:#D4FCFF; */
+            background: #F5F5F5;
+            left: 32px;
+            animation: lds-ellipsis2 1s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 56px;
+            animation: lds-ellipsis3 1s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(24px, 0);
+            }
         }
     </style>
 </head>
@@ -529,27 +594,27 @@
                 <div id="captioned-gallery" class="centered ">
                     <figure class="slider">
                         <figure>
-                            <a target= 'blank' href ="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://www.kopasaids.com.ng/">
                                 <img src="$router_base_url/$imageone">
                             </a>
                         </figure>
                         <figure>
-                            <a target= 'blank' href ="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://www.kopasaids.com.ng/">
                                 <img src="$router_base_url/$imagetwo">
                             </a>
                         </figure>
                         <figure>
-                            <a target= 'blank' href ="https://www.kopasaids.com.ng/"> 
-                            <img src="$router_base_url/$imagethree">
+                            <a target='blank' href="https://www.kopasaids.com.ng/">
+                                <img src="$router_base_url/$imagethree">
                             </a>
                         </figure>
                         <figure>
-                            <a target= 'blank' href ="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://www.kopasaids.com.ng/">
                                 <img src="$router_base_url/$imageone">
                             </a>
                         </figure>
                         <figure>
-                            <a target= 'blank' href ="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://www.kopasaids.com.ng/">
                                 <img src="$router_base_url/$imagetwo">
                             </a>
                         </figure>
@@ -564,47 +629,79 @@
 
             <div class="mobileCenter">
                 <div class="card">
-                    <div class='goHome'>
-                         
-                        <a class= 'text-grey' href="./splash.html"> < Home</a>
-                    </div>
-                   
-                    <p class='text-grey'>
-                        <span class='gatewayName bold'> Voucher Payment Details</span>
-                    </p>
-                   
-                   
-                    <p class='billing'>Make a bank transfor of <span> $currency $voucher_amount</span> to the following account details</p>
-              
-                    <div class='text-left'>
-                        <p class='t-14'> Bank</p>
-                        <p class='bold t-16 '> $voucher_bank</p>
-                    </div>
-                    <div class='text-left'>
-                        <p class='t-14'> Account Number</p>
-                        <p class='bold t-16 '> $voucher_account_number</p>
-                    </div>
-                    <div class='text-left mb-3'>
-                        <p class='t-14'> Account Name</p>
-                        <p class='bold t-16 '> $voucher_account_name</p>
-                    </div>
-                    <div class='text-left note'>
-                        <p> NOTE:</p>
-                        This transaction attracts a bank charge of 0.75% per transaction. This is a unique account number 
-                        assigned only to your phone number
-                    </div>
-                    <p class='t-14'> Already have a voucher?</p>
 
-                    <!-- <form method="get" action="$authaction">
-                        <input type="hidden" name="form_type" value="voucher_login">
-                        <input type="submit" class="btn voucherBtn" value="Login Here">
-                       
-                    </form>  -->
-                    <a href = "./splash.html" class="btn voucherBtn">
-                        Login Here
-                       
-                    </a>
-                   
+                    <div class='goHome'>
+
+                        <a class='text-grey' href="./enugu.html">
+                            < Home</a>
+                    </div>
+
+
+
+                    <div>
+
+                        <p class='text-grey'>
+                            <span class='gatewayName bold'> Voucher Login</span>
+                        </p>
+                        <p class='billing text-left'>For access to the internet, please enter your Phone Number and
+                            Voucher Code</p>
+
+                        <p class='text-grey bold mb-3 t-14 text-left'>
+                            NOTE:
+                            Please use the Phone Number your Vocher Code was sent to
+                        </p>
+                        <p class='billing'> Billing rate: <span class='bold'> $currency $billing_rate_per_GB
+                        </span> per GB <span class="tooltip">i
+                            <span class="tooltiptext">This is the rate at which you are charged for browsing</span>
+                        </span></p>
+                        <p class='mobilebilling bold'> Billing rate <span class="tooltip">i
+                            <span class="tooltiptext">This is the rate at which you are charged for browsing</span>
+                        </span> <br /> <span> $currency $billing_rate_per_GB
+                        </span> per GB</p>
+                        <form onsubmit="return validateForm()" action="$authaction" method="get" id="loginForm">
+                            <input type="hidden" name="form_type" value="voucher_login">
+
+                            <label class='float-left mb-3'> Enter Phone Number </label>
+                            <div class=" mb-3">
+
+                                <input id="phoneNumber" required type="text" name="phone_number"
+                                    class="form-control loginCred" aria-label="Username" aria-describedby="basic-addon1"
+                                    maxlength="15" />
+
+                            </div>
+                            <label class='float-left mb-3'>Voucher code 
+                            <span class="tooltip">i
+                                <span class="tooltiptext">This is the code that was sent to your phone number</span>
+                            </span>
+                            </label>
+
+                            <div class=" mb-3">
+
+                                <input type="password" required name="voucher_code" class="form-control loginCred"
+                                    id='voucherCode' aria-label="Username" aria-describedby="basic-addon1"
+                                    maxlength="6" />
+
+                            </div>
+
+                            <p id='err' class='errorMsgs' style='display: none'> </p>
+                            <p class='errorMsgs' style="display: $display ;"> $voucher_error_message</p>
+
+
+                            <button class="btn loginBtn" id="login">
+                                Login
+                            </button>
+                            <p class='dntHave'> Don't have a valid Voucher?</p>
+
+
+                        </form>
+                        <form method="get" action="$authaction">
+                            <input type="hidden" name="form_type" value="voucher_purchase">
+                            <input type="submit" class="btn voucherBtn" value="Buy voucher">
+                        </form>
+                        <!-- <button class="btn voucherBtn">
+                        Buy Voucher
+                    </button> -->
+                    </div>
                 </div>
             </div>
             <div class='footer'>
@@ -626,6 +723,54 @@
 
         </div>
     </div>
+    <script>
+        var phone = document.getElementById("phoneNumber")
+        var login = document.getElementById("login")
+        var voucherCode = document.getElementById('voucherCode')
+        var err = document.getElementById('err')
+        var code = ''
+        var userPhone = ''
+
+        phone.addEventListener("change", function () {
+            userPhone = phone.value
+        });
+
+        voucherCode.addEventListener("change", function () {
+            code = voucherCode.value
+        });
+
+        function validateForm() {
+            if (userPhone == '' || code.length == 0) {
+                err.innerHTML = 'Email and Code are required'
+                err.style.display = 'block';
+                return false;
+            } else
+                if (code.length !== 6) {
+                    err.innerHTML = 'Voucher code must be six digit numbers'
+                    err.style.display = 'block'
+
+                    return false;
+                } else {
+                    var node = document.createElement("div");
+                    var elips1 = document.createElement("div");
+                    elips1.className = "lds-ellipsis"
+                    var elips2 = document.createElement("div");
+                    var elips3 = document.createElement("div");
+                    var elips4 = document.createElement("div");
+                    elips1.appendChild(elips2);
+                    elips1.appendChild(elips3);
+                    elips1.appendChild(elips4);
+                    node.appendChild(elips1);
+                    login.innerHTML = '';
+                    login.appendChild(node);
+                    login.setAttribute('disabled', true);
+                    login.classList.add('disabled');
+                    err.innerHTML = '';
+                    return true;
+                }
+        };
+
+    </script>
 
 </body>
 

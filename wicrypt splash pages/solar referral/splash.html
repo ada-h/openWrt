@@ -245,7 +245,7 @@
             z-index: 1;
             bottom: 125%;
             left: 50%;
-            margin-left: -60px;
+            margin-left: -264px;
             opacity: 0;
             transition: opacity 0.3s;
         }
@@ -402,24 +402,27 @@
             margin-bottom: 1rem;
             text-align: right;
         }
-        
+
         .t-15 {
-                font-size: 15px;
-            }
-        .t-12{
+            font-size: 15px;
+        }
+
+        .t-12 {
             font-size: 12px;
         }
 
 
         @media (min-width: 992px) and (min-height: 600px) {
             .emailnphone {
-            display: flex;
-            justify-content: space-between;
+                display: flex;
+                justify-content: space-between;
             }
-            .left{
-            width: 50%;
+
+            .left {
+                width: 50%;
             }
-            .right{
+
+            .right {
                 width: 50%;
                 margin-left: 1em
             }
@@ -624,9 +627,11 @@
             display: none;
             padding: 0 20px;
         }
-        .mr1{
+
+        .mr1 {
             margin-right: 1.5rem;
         }
+
         .lds-ellipsis {
             display: inline-block;
             position: relative;
@@ -698,7 +703,12 @@
                 transform: translate(24px, 0);
             }
         }
-        
+        button[disabled]{
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -749,7 +759,7 @@
                         <span class='gatewayName bold'> Welcome!</span>
                     </p>
                     <p class='billing text-center'>Please fill out the form and Enjoy free Internet</p>
-                   
+
                     <div class="container">
                         <input id="tab-1" type="radio" name="tabs" checked="checked" />
                         <input id="tab-2" type="radio" name="tabs" />
@@ -766,7 +776,8 @@
                                 <input type="hidden" name="form_type" value="referral_login">
 
                                 <div class="tab">
-                                    <p class='billing text-left'>Tell us a little bit about you and why you wish to benefit from this 
+                                    <p class='billing text-left'>Tell us a little bit about you and why you wish to
+                                        benefit from this
                                         programme</p>
                                     <!-- <label class='float-left mb-3'> Name</label>
                                     <div class=" mb-3">
@@ -789,9 +800,9 @@
                                             <label class='mb-3 float-left'> Name</label>
                                             <div class=" mb-3">
 
-                                                <input required type="text" name="name"
-                                                    class="form-control loginCred" aria-label="Username"
-                                                    aria-describedby="basic-addon1" maxlength="64" />
+                                                <input required type="text" name="name" class="form-control loginCred"
+                                                    aria-label="Username" aria-describedby="basic-addon1"
+                                                    maxlength="64" />
 
                                             </div>
                                         </div>
@@ -807,13 +818,61 @@
                                         </div>
 
                                     </div>
-                                    <label class='float-left mb-3'>Address</label>
-                                    <div class=" mb-3">
+                                    <div class="emailnphone">
+                                        <div class='left'>
+                                        <label class='float-left mb-3'>Address</label>
+                                        <div class=" mb-3">
 
-                                        <input id="address" required type="text" name="address"
-                                            class="form-control loginCred" aria-label="Username" maxlength="256"
-                                            aria-describedby="basic-addon1" />
+                                            <input id="address" type="text" name="address" class="form-control loginCred"
+                                                aria-label="Username" maxlength="256" aria-describedby="basic-addon1" />
 
+                                        </div>
+                                    </div>
+                                    <div class='right'>
+                                    <label class='float-left mb-3'>Select State</label>
+                                    <div class='mb-3'>
+                                        <select required name="state" id="state" class="form-control loginCred">
+                                            <option value="Abuja FCT">Abuja FCT</option>
+                                            <option value="Abia">Abia</option>
+                                            <option value="Adamawa">Adamawa</option>
+                                            <option value="Akwa Ibom">Akwa Ibom</option>
+                                            <option value="Anambra">Anambra</option>
+                                            <option value="Bauchi">Bauchi</option>
+                                            <option value="Bayelsa">Bayelsa</option>
+                                            <option value="Benue">Benue</option>
+                                            <option value="Borno">Borno</option>
+                                            <option value="Cross River">Cross River</option>
+                                            <option value="Delta">Delta</option>
+                                            <option value="Ebonyi">Ebonyi</option>
+                                            <option value="Edo">Edo</option>
+                                            <option value="Ekiti">Ekiti</option>
+                                            <option value="Enugu">Enugu</option>
+                                            <option value="Gombe">Gombe</option>
+                                            <option value="Imo">Imo</option>
+                                            <option value="Jigawa">Jigawa</option>
+                                            <option value="Kaduna">Kaduna</option>
+                                            <option value="Kano">Kano</option>
+                                            <option value="Katsina">Katsina</option>
+                                            <option value="Kebbi">Kebbi</option>
+                                            <option value="Kogi">Kogi</option>
+                                            <option value="Kwara">Kwara</option>
+                                            <option value="Lagos">Lagos</option>
+                                            <option value="Nassarawa">Nassarawa</option>
+                                            <option value="Niger">Niger</option>
+                                            <option value="Ogun">Ogun</option>
+                                            <option value="Ondo">Ondo</option>
+                                            <option value="Osun">Osun</option>
+                                            <option value="Oyo">Oyo</option>
+                                            <option value="Plateau">Plateau</option>
+                                            <option value="Rivers">Rivers</option>
+                                            <option value="Sokoto">Sokoto</option>
+                                            <option value="Taraba">Taraba</option>
+                                            <option value="Yobe">Yobe</option>
+                                            <option value="Zamfara">Zamfara</option>
+                                            <option value="Outside Nigeria">Outside Nigeria</option>
+                                        </select>
+                                    </div>
+                                    </div>
                                     </div>
                                     <label class='float-left mb-3'>Gender</label>
                                     <div class=" mb-3">
@@ -850,7 +909,7 @@
 
                                                 <input type="tel" required name="refphone1"
                                                     class="form-control loginCred" aria-label="Username"
-                                                    aria-describedby="basic-addon1" maxlength="24"/>
+                                                    aria-describedby="basic-addon1" maxlength="24" />
 
                                             </div>
                                         </div>
@@ -873,7 +932,7 @@
 
                                                 <input type="tel" required name="refphone2"
                                                     class="form-control loginCred" aria-label="Username"
-                                                    aria-describedby="basic-addon1" maxlength="24"/>
+                                                    aria-describedby="basic-addon1" maxlength="24" />
 
                                             </div>
                                         </div>
@@ -907,66 +966,70 @@
                                 </div>
                                 <div class="tab">
                                     <div>
-                                        <p class='t-12 text-left'>Do you have regular light in your workplace or at home </p>
+                                        <p class='t-12 text-left'>Do you have regular light in your workplace or at home
+                                        </p>
                                         <div class='text-left'>
                                             <label class="mr1">Yes
                                                 <input type="radio" id="yes" name="regularpower" value="yes">
-    
+
                                             </label>
-    
+
                                             <label class="">No
                                                 <input type="radio" id="no" name="regularpower" value="no">
                                             </label>
-    
+
                                         </div>
-                                        
+
                                     </div>
                                     <div>
                                         <p class='t-12 text-left'> Do you know about solar products </p>
                                         <div class='text-left'>
                                             <label class="mr1">Yes
                                                 <input type="radio" id="yes" name="solarknowledge" value="yes">
-    
+
                                             </label>
-    
+
                                             <label class="">No
                                                 <input type="radio" id="no" name="solarknowledge" value="no">
                                             </label>
                                         </div>
-                                        
+
                                     </div>
                                     <div>
                                         <p class='t-12 text-left'> Do you currently use any solar product </p>
                                         <div class="text-left">
                                             <label class="mr1">Yes
                                                 <input type="radio" id="yes" name="usesolar" value="yes">
-    
+
                                             </label>
-    
+
                                             <label class="">No
                                                 <input type="radio" id="no" name="usesolar" value="no">
                                             </label>
                                         </div>
-                                       
+
                                     </div>
                                     <div>
                                         <p class='t-12 text-left'> Would you like to use solar products </p>
                                         <div class="text-left">
                                             <label class="mr1">Yes
                                                 <input type="radio" id="yes" name="liketouseolar" value="yes">
-    
+
                                             </label>
                                             <label class="">No
                                                 <input type="radio" id="no" name="liketouseolar" value="no">
                                             </label>
-    
+
                                         </div>
-                                       
-                                        
+
+
                                     </div>
                                     <p id='err' class='errorMsgs' style='display: none'> </p>
                                     <p class='errorMsgs' style="display: $display ;"> $referral_error</p>
-                              
+                                    <!-- <input type="checkbox" id="myCheck">  -->
+                                    <span>Clicking Submit means that you agree to all our terms and conditions.  <span class="tooltip">i
+                                        <span class="tooltiptext">You have given us consent to use the data provided for marketing.</span>
+                                    </span></span>
                                     <button class="btn loginBtn" id="login">
                                         Submit
                                     </button>
@@ -977,7 +1040,11 @@
 
                             <form method="get" action="$authaction">
                                 <input type="hidden" name="form_type" value="voucher_login">
-                                <input type="submit" class="btn voucherBtn" value="Login with Voucher">
+                                <!-- <input type="submit" class="btn voucherBtn" value="Login With Voucher"> -->
+                                <a href = "./voucher_login.html" class="btn voucherBtn">
+                                    Login With Voucher
+                                   
+                                </a>
                                
                             </form> 
                         </div>
@@ -1007,7 +1074,7 @@
         </div>
     </div>
     <script>
-      
+
 
         function validateForm() {
 
@@ -1028,7 +1095,16 @@
             err.innerHTML = '';
             return true;
         };
-    
+        // function disableFunction() {
+        // var login = document.getElementById("login");
+        // var checkBox = document.getElementById("myCheck");
+        // console.log(checkBox, 'i am check box')
+        // if (checkBox.checked == true){
+        //     login.removeAttribute("disabled");
+        // } else {
+        //     login.setAttribute("disabled", "true");
+        // }
+        // }
 
     </script>
 </body>
