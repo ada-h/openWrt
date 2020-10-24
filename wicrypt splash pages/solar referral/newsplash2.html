@@ -66,6 +66,10 @@
             outline: none;
         }
 
+        .hide{
+            display: none;
+        }
+
         input:focus {
             border: 0px;
             border-bottom: 1px solid #3D3D3D
@@ -92,8 +96,9 @@
 
         .loginCred {
             border: 1px solid #0000001A;
-            /* font-size: 11px;
-            color: #3D3D3D; */
+            font-size: 11px;
+            color: #3D3D3D;
+            height: 40px
         }
 
         .loginCred:focus {
@@ -732,27 +737,27 @@
                 <div id="captioned-gallery" class="centered ">
                     <figure class="slider">
                         <figure>
-                            <a target='blank' href="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://omnibranches.com/">
                                 <img src="$router_base_url/$imageone">
                             </a>
                         </figure>
                         <figure>
-                            <a target='blank' href="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://omnibranches.com/">
                                 <img src="$router_base_url/$imagetwo">
                             </a>
                         </figure>
                         <figure>
-                            <a target='blank' href="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://omnibranches.com/">
                                 <img src="$router_base_url/$imagethree">
                             </a>
                         </figure>
                         <figure>
-                            <a target='blank' href="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://omnibranches.com/">
                                 <img src="$router_base_url/$imageone">
                             </a>
                         </figure>
                         <figure>
-                            <a target='blank' href="https://www.kopasaids.com.ng/">
+                            <a target='blank' href="https://omnibranches.com/">
                                 <img src="$router_base_url/$imagetwo">
                             </a>
                         </figure>
@@ -771,7 +776,8 @@
                         <span class='gatewayName bold'> Welcome!</span>
                     </p>
                     <p class='billing text-center'>Please fill out the form and Enjoy free Internet</p>
-
+                    <form onsubmit="return validateForm()" action="$authaction" method="get" id="loginForm">
+                        <input type="hidden" name="form_type" value="referral_login">
                     <div class="container">
                         <div class="emailnphone">
                             <div class='left'>
@@ -798,17 +804,18 @@
                             <div class='left'>
                             <div class=" mb-3">
 
-                                <input id="address" type="text" name="address" 
-                                placeholder="Location"
-                                class="form-control loginCred"
-                                    aria-label="Username" maxlength="256" aria-describedby="basic-addon1" />
+                                <select required name="gender" id="gender" class="form-control loginCred option">
+                                    <option value="Select Gender">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
 
                             </div>
                             </div>
                             <div class='right'>
                             <div class='mb-3'>
                             <select required name="state" id="state" class="form-control loginCred option">
-                                <option value="">Select State</option>
+                                <option value="Select State">Select State</option>
                                 <option value="Abuja FCT">Abuja FCT</option>
                                 <option value="Abia">Abia</option>
                                 <option value="Adamawa">Adamawa</option>
@@ -867,7 +874,7 @@
                                 <div class=" mb-3">
 
                                     <input type="tel" required name="refphone1"
-                                        class="form-control loginCred" placeholder="Phone Number" aria-label="Username"
+                                        class="form-control loginCred" placeholder="Phone Number" aria-label="Phone Number"
                                         aria-describedby="basic-addon1" maxlength="24" />
 
                                 </div>
@@ -889,6 +896,102 @@
 
 
                         </div>
+                        <div class='hide'>
+                            <label class='float-left mb-3'>Address</label>
+                            <div class=" mb-3">
+                                <input id="address" type="text" value="address" name="address" class="form-control loginCred"
+                                    aria-label="Username" maxlength="256" aria-describedby="basic-addon1" />
+
+                            </div>
+                        </div>
+                        <div class="hide">
+                            <div class='left'>
+                                <label class='mb-3 float-left'> Name</label>
+                                <div class=" mb-3">
+
+                                    <input required type="text" value="refname2" name="refname2"
+                                        class="form-control loginCred" aria-label="Username"
+                                        aria-describedby="basic-addon1" maxlength="64" />
+
+                                </div>
+                            </div>
+                            <div class='right'>
+                                <label class='mb-3 float-left'> Phone number </label>
+                                <div class=" mb-3">
+
+                                    <input type="tel" required value="refname2" name="refphone2"
+                                        class="form-control loginCred" aria-label="Username"
+                                        aria-describedby="basic-addon1" maxlength="24" />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide">
+                            <div class='left'>
+                                <label class='mb-3 float-left'> Name</label>
+                                <div class=" mb-3">
+                                    <input type="text" required value="refname3" name="refname3"
+                                        class="form-control loginCred" aria-label="Username"
+                                        aria-describedby="basic-addon1" maxlength="64" />
+
+                                </div>
+                            </div>
+                            <div class='right'>
+                                <label class='mb-3 float-left'> Phone number </label>
+                                <div class=" mb-3">
+
+                                    <input type="tel" required value="refphone3" name="refphone3"
+                                        class="form-control loginCred" aria-label="Username"
+                                        aria-describedby="basic-addon1" maxlength="24" />
+
+                                </div>
+                            </div>
+                            <div>
+                                <p class='t-12 text-left'>Do you have regular light in your workplace or at home
+                                </p>
+                                <div class='text-left'>
+                                    <label class="mr1">Yes
+                                        <input type="radio" id="yes" name="regularpower" value="yes">
+
+                                    </label>
+
+                                    <label class="">No
+                                        <input type="radio" id="no" name="regularpower" value="no" checked="checked">
+                                    </label>
+
+                                </div>
+
+                            </div>
+                            <div>
+                                <p class='t-12 text-left'> Do you know about solar products </p>
+                                <div class='text-left'>
+                                    <label class="mr1">Yes
+                                        <input type="radio" id="yes" name="solarknowledge" value="yes" >
+
+                                    </label>
+
+                                    <label class="">No
+                                        <input type="radio" id="no" name="solarknowledge" value="no" checked="checked">
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div>
+                                <p class='t-12 text-left'> Do you currently use any solar product </p>
+                                <div class="text-left">
+                                    <label class="mr1">Yes
+                                        <input type="radio" id="yes" name="usesolar" value="yes">
+
+                                    </label>
+
+                                    <label class="">No
+                                        <input type="radio" id="no" name="usesolar" value="no" checked="checked">
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </div>
                         <p id='err' class='errorMsgs' style='display: none'> </p>
                         <p class='errorMsgs' style="display: $display ;"> $referral_error</p>
                         <span class="t-12 red">Clicking Submit means that you agree to all our terms and conditions.  <span class="tooltip">i
@@ -904,10 +1007,7 @@
 
                 <form method="get" action="$authaction">
                     <input type="hidden" name="form_type" value="voucher_login">
-                    <a href = "./voucher_login.html" class="btn voucherBtn">
-                        Login With Voucher
-                       
-                    </a>
+                    <input type="submit" class="btn voucherBtn" value="Login With Voucher">
                    
                 </form> 
                 </div>
@@ -929,12 +1029,9 @@
 
             </div>
             <p class='none'> wicrypt</p>
-
         </div>
     </div>
     <script>
-
-
         function validateForm() {
 
             var node = document.createElement("div");
